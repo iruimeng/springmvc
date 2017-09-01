@@ -1,7 +1,5 @@
 package com.springmvc.model;
 
-import java.sql.Date;
-
 /**
  * Created by MT on 2017/3/2.
  */
@@ -9,7 +7,7 @@ public class Blog {
     private int id;
     private String title;
     private String content;
-    private Date ctime;
+    private String ctime;
 
     public int getId() {
         return id;
@@ -23,7 +21,7 @@ public class Blog {
         return content;
     }
 
-    public Date getCtime() {
+    public String getCtime() {
         return ctime;
     }
 
@@ -39,7 +37,11 @@ public class Blog {
         this.content = content;
     }
 
-    public void setCtime(Date ctime) {
+    public void setCtime(String ctime) {
         this.ctime = ctime;
+    }
+
+    public String toString() {
+        return title + "————" + content;
     }
 }

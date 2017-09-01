@@ -6,4 +6,19 @@
         select * from tbl_blog where id=#{id}
     </select>
 
+    <!--
+    <resultMap id="blogList" type="com.springmvc.model.Blog">
+        <result property="id" column="id"></result>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="ctime" column="ctime"></result>
+    </resultMap>
+    -->
+    <select id="getAll" resultType="com.springmvc.model.Blog">
+        SELECT * FROM tbl_blog
+    </select>
+
+    <insert id="insert" parameterType="com.springmvc.model.Blog" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tbl_blog(title, content, ctime) VALUES (#{title}, #{content}, #{ctime})
+    </insert>
 </mapper>

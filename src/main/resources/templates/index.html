@@ -1,0 +1,13 @@
+<div th:replace="header"></div>
+<body>
+<div class="container">
+    <div class="post" th:each="post : ${posts}">
+        <div class="page-header">
+            <h3><a href="#" th:text="${post.title}"></a></h3>
+            <small class="text-muted" th:text="${post.ctime}"></small>
+        </div>
+        <div class="post-content" th:text="${post.content}"></div>
+    </div>
+</div>
+</body>
+</html>
